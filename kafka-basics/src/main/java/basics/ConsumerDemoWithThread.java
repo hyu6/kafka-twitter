@@ -103,7 +103,7 @@ public class ConsumerDemoWithThread {
                     }
                 }
             } catch (WakeupException e) {
-                logger.info("Received shutdown signal.");
+                logger.info("Received shutdown signal");
             } finally {
                 consumer.close();
 
