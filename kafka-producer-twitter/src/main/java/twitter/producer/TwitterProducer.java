@@ -25,10 +25,10 @@ public class TwitterProducer {
 
     Logger logger = LoggerFactory.getLogger(TwitterProducer.class.getName());
 
-    String consumerKey = twitter.producer.Constants.API_KEY;
-    String consumerSecret = twitter.producer.Constants.API_SECRET_KEY;
-    String token = twitter.producer.Constants.ACCESS_TOKEN;
-    String secret = twitter.producer.Constants.ACCESS_TOKEN_SECRET;
+    String consumerKey = Credentials.API_KEY;
+    String consumerSecret = Credentials.API_SECRET_KEY;
+    String token = Credentials.ACCESS_TOKEN;
+    String secret = Credentials.ACCESS_TOKEN_SECRET;
 
     List<String> terms = Lists.newArrayList("kafka", "java", "github");
 
