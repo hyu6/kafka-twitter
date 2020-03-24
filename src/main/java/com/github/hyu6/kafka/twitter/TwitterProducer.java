@@ -30,7 +30,9 @@ public class TwitterProducer {
     String token = com.github.hyu6.kafka.twitter.Constants.ACCESS_TOKEN;
     String secret = com.github.hyu6.kafka.twitter.Constants.ACCESS_TOKEN_SECRET;
 
-    List<String> terms = Lists.newArrayList("kafka");
+    List<String> terms = Lists.newArrayList("kafka", "java", "github");
+
+    String topic = "twitter_tweets";
 
     public TwitterProducer() {
     }
@@ -76,10 +78,10 @@ public class TwitterProducer {
             }
             if (msg != null) {
                 logger.info(msg);
-                producer.send(new ProducerRecord<>("twitter_tweets", null, msg), new Callback() {
+                producer.send(new ProducerRecord<>(topic, null, msg), new Callback() {
                     @Override
                     public void onCompletion(RecordMetadata recordMetadata, Exception e) {
-                        if (e!=null) {
+                        if (e != null) {
                             logger.error("An error occurred", e);
                         }
                     }
@@ -125,6 +127,11 @@ public class TwitterProducer {
         properties.setProperty(ProducerConfig.ACKS_CONFIG, "all");
         properties.setProperty(ProducerConfig.RETRIES_CONFIG, Integer.toString(Integer.MAX_VALUE));
         properties.setProperty(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, "5"); // Kafka >= 1.0
+
+        // high throughput producer (at the expense of a bit of latency and CPU usage)
+        properties.setProperty(ProducerConfig.COMPRESSION_TYPE_CONFIG, "snappy");
+        properties.setProperty(ProducerConfig.LINGER_MS_CONFIG, "20");
+        properties.setProperty(ProducerConfig.BATCH_SIZE_CONFIG, Integer.toString(32 * 1024)); // batch size: 32 KB
 
         // create the producer
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
