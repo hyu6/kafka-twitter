@@ -1,4 +1,4 @@
-package com.github.hyu6.kafka.twitter;
+package twitter.producer;
 
 import com.google.common.collect.Lists;
 import com.twitter.hbc.ClientBuilder;
@@ -25,10 +25,10 @@ public class TwitterProducer {
 
     Logger logger = LoggerFactory.getLogger(TwitterProducer.class.getName());
 
-    String consumerKey = com.github.hyu6.kafka.twitter.Constants.API_KEY;
-    String consumerSecret = com.github.hyu6.kafka.twitter.Constants.API_SECRET_KEY;
-    String token = com.github.hyu6.kafka.twitter.Constants.ACCESS_TOKEN;
-    String secret = com.github.hyu6.kafka.twitter.Constants.ACCESS_TOKEN_SECRET;
+    String consumerKey = twitter.producer.Constants.API_KEY;
+    String consumerSecret = twitter.producer.Constants.API_SECRET_KEY;
+    String token = twitter.producer.Constants.ACCESS_TOKEN;
+    String secret = twitter.producer.Constants.ACCESS_TOKEN_SECRET;
 
     List<String> terms = Lists.newArrayList("kafka", "java", "github");
 
