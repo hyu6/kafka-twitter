@@ -1,1 +1,1 @@
-src/main/java/com/github/hyu6/kafka/twitter/Constants.java
+src/main/java/twitter/producer/Constants.java
