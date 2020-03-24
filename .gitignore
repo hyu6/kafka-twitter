@@ -1,2 +1,2 @@
-/kafka-producer-twitter/src/main/java/twitter/producer/Credentials.java
-/kafka-producer-twitter/target/classes/twitter/producer/Credentials.class
+/kafka-producer-twitter/src/main/java/kafka/producer/Credentials.java
+/kafka-producer-twitter/target/classes/kafka/producer/Credentials.class

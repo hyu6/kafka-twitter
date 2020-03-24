@@ -1,4 +1,4 @@
-package basics;
+package kafka.basics;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -103,11 +103,11 @@ public class ConsumerDemoWithThread {
                     }
                 }
             } catch (WakeupException e) {
-<<<<<<< HEAD
+<<<<<<<HEAD
                 logger.info("Received shutdown signal");
 =======
                 logger.info("Received shutdown signal.");
->>>>>>> a568f58c0de934dca1abe213a3a72aed4773f2f3
+>>>>>>>a568f58c0de934dca1abe213a3a72aed4773f2f3
             } finally {
                 consumer.close();
 
