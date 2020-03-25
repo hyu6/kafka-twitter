@@ -1,2 +1,4 @@
 /kafka-producer-twitter/src/main/java/kafka/producer/Credentials.java
 /kafka-producer-twitter/target/classes/kafka/producer/Credentials.class
+/kafka-consumer-elasticsearch/src/main/java/com/github/hyu6/kafka/consumer/Credentials.java
+/kafka-consumer-elasticsearch/target/classes/com/github/hyu6/kafka/consumer/Credentials.class
