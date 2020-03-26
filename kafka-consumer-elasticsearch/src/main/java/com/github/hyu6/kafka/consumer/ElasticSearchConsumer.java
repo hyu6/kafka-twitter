@@ -107,7 +107,6 @@ public class ElasticSearchConsumer {
                 try {
                     String id = extractIdFromTweet(record.value());
 
-
                     // insert data into ElasticSearch
                     IndexRequest indexRequest = new IndexRequest("twitter")
                             .id(id) // make the consumer idempotent
